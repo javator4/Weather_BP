@@ -1,11 +1,9 @@
 package pl.sda;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 import pl.sda.model.Current;
 import pl.sda.model.Location;
 import pl.sda.model.Weather;
-import lombok.*;
 
 public class OrgImplementation implements WeatherForecast{
 

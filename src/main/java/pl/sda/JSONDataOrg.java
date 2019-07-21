@@ -1,14 +1,9 @@
 package pl.sda;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
-import pl.sda.AbstractJSONData;
 import pl.sda.model.Current;
 import pl.sda.model.Location;
 import pl.sda.model.Weather;
-
-import java.io.File;
-import java.io.IOException;
 
 public class JSONDataOrg extends AbstractJSONData {
 
