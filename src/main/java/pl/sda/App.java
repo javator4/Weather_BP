@@ -9,14 +9,8 @@ import java.io.StringReader;
 import java.util.Scanner;
 
 public class App {
-
-    private static Logger logger = Logger.getLogger(App.class);
-
     public static void main( String[] args ) throws FileNotFoundException {
-        logger.info("URUCHOMEINIE APLIKACJI");
-        logger.warn("WARNING");
-        logger.debug("DEBUG");
-        logger.error("ERROR");
+
 
         String key = "";
                 File f = new File("key.txt");
