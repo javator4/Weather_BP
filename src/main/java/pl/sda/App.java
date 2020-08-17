@@ -14,13 +14,13 @@ public class App {
         logger.error("ERROR");
 
         JSONDataFaster weatherService = new JSONDataFaster(
-                "http://api.apixu.com/v1/current.json",
-                "e62328dd3789489597281354191307"
+                "http://api.weatherstack.com/current",
+                "0"
         );
 
         JSONDataOrg weatherService1 = new JSONDataOrg(
-                "http://api.apixu.com/v1/current.json",
-                "e62328dd3789489597281354191307"
+                "http://api.weatherstack.com/current",
+                "0"
         );
 
         weatherService.getJSONData("torun");
@@ -28,7 +28,7 @@ public class App {
         Weather weather = weatherService.getWeather();
         Weather weather1 = weatherService1.getWeather();
 
-        System.out.println(weather.toString());
+        //System.out.println(weather.toString());
         System.out.println(weather1.toString());
     }
 }

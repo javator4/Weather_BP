@@ -1,5 +1,6 @@
 package pl.sda;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import pl.sda.model.Current;
 import pl.sda.model.Location;
@@ -17,21 +18,27 @@ public class OrgImplementation implements WeatherForecast{
 
     @Override
     public Weather getWeather() {
+        String temp, lat, lon, country, name;
+        temp = lat = lon = country = name = "";
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(this.weatherService.getJSONData(this.city));
 
-        JSONObject jsonObject = new JSONObject(this.weatherService.getJSONData(this.city));
 
-        String temp = jsonObject.getJSONObject("current")
+         temp = jsonObject.getJSONObject("current")
                 .get("temp_c").toString();
-        String lat = jsonObject.getJSONObject("location").get("lat").toString();
-        String lon = jsonObject.getJSONObject("location").get("lon").toString();
-        String country = jsonObject.getJSONObject("location").get("country").toString();
-        String name = jsonObject.getJSONObject("location").get("name").toString();
-
+         lat = jsonObject.getJSONObject("location").get("lat").toString();
+         lon = jsonObject.getJSONObject("location").get("lon").toString();
+         country = jsonObject.getJSONObject("location").get("country").toString();
+         name = jsonObject.getJSONObject("location").get("name").toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         Weather weather = new Weather();
 
         Current current =  Current.builder()
-                .temp_c(Float.parseFloat(temp))
+                .temperature(Float.parseFloat(temp))
                 .build();
 
         Location location =  Location.builder()

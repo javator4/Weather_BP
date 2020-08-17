@@ -16,7 +16,8 @@ public class Location {
     private String region;
     private String country;
     private float lat, lon;
-    private String tz_id;
+    private String timezone_id;
     private long localtime_epoch;
     private String localtime;
+    private float utc_offset;
 }

@@ -38,6 +38,6 @@ public abstract class AbstractJSONData {
     public void buildURL(String url, String key) {
         this.url = url;
         this.key = key;
-        this.finalURL = url + "?key=" + key + "&q=";
+        this.finalURL = url + "?access_key=" + key + "&query=";
     }
 }
